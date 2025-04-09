@@ -6,9 +6,7 @@ import { getProductImageUrl } from "../product-image";
 import Checkout from "@/app/checkout/checkout";
 
 interface SingleProductProps {
-	params: {
-		productId: string;
-	};
+	params: Record<string, string>;
 }
 
 export default async function SingleProduct({ params }: SingleProductProps) {
