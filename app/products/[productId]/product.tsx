@@ -5,11 +5,7 @@ import Image from "next/image";
 import { getProductImageUrl } from "../product-image";
 import Checkout from "@/app/checkout/checkout";
 
-interface SingleProductProps {
-	params: Record<string, string>;
-}
-
-export default async function SingleProduct({ params }: SingleProductProps) {
+export default async function SingleProduct({ params }: { params: { productId: string } }) {
 	const productId = params?.productId;
 	const product = await getProduct(Number(productId));
 
