@@ -16,6 +16,16 @@ export default async function SingleProduct({ params }: PageProps) {
 	const productId = resolvedParams?.productId;
 	const product = await getProduct(Number(productId));
 
+	if ('message' in product) {
+		return (
+		  <Grid container marginBottom={"2rem"} rowGap={3}>
+			<Typography variant="h4" color="error">
+			  {product.message}
+			</Typography>
+		  </Grid>
+		);
+	  }
+
 	return (
 		<Grid container marginBottom={"2rem"} rowGap={3}>
 			{product.imageExists && (
