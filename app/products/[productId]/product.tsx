@@ -5,8 +5,15 @@ import Image from "next/image";
 import { getProductImageUrl } from "../product-image";
 import Checkout from "@/app/checkout/checkout";
 
-export default async function SingleProduct({ params }: { params: { productId: string } }) {
-	const productId = params?.productId;
+interface PageProps {
+	params: Promise<{
+		[key: string]: string | string[] | undefined;
+	}>;
+   }
+
+export default async function SingleProduct({ params }: PageProps) {
+	const resolvedParams = await params;
+	const productId = resolvedParams?.productId;
 	const product = await getProduct(Number(productId));
 
 	return (
