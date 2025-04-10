@@ -5,7 +5,6 @@ import Grid from "@mui/material/Grid2";
 import Product from "./product";
 import { useEffect } from "react";
 import { io, Socket } from "socket.io-client";
-import { API_URL } from "../common/constants/api";
 import revalidateProducts from "./actions/revalidate-products";
 import getAuthentication from "../auth/actions/get-authentication";
 
@@ -18,7 +17,8 @@ export default function ProductsGrid({ products }: ProductGridProps) {
 		let socket: Socket;
 		
         const createSocket = async () => {
-			socket = io(API_URL!, {
+			socket = io("/", {
+				path:'/socket.io',
 				auth: {
 					Authentication: await getAuthentication(),
 				},
