@@ -11,9 +11,7 @@ interface CheckoutProps {
 export default function Checkout({ productId }: CheckoutProps) {
 	const handleCheckout = async () => {
 		const session = await checkout(productId);
-		console.log("🚀 ~ handleCheckout ~ session:", session)
 		const stripe = await getStripe();
-		console.log("🚀 ~ handleCheckout ~ stripe:", stripe)
 		await stripe?.redirectToCheckout({
 			sessionId: session.data.id,
 		});
