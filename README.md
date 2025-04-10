@@ -2,6 +2,11 @@
 
 Shop Next UI is a web application for managing products, user authentication, and making purchases using Stripe. The app uses Next.js with Turbopack for fast development and performance, along with MUI for UI components and Tailwind CSS for styling.
 
+## Demo
+
+You can view the live demo of the application here:  
+[Shop Next UI Demo](https://shop-next-ui-xty6.vercel.app/)
+
 ## Features
 
 - **Authentication and Registration:** Users can sign up and log in to the system.
