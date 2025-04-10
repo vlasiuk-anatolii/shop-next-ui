@@ -19,6 +19,9 @@ export default function ProductsGrid({ products }: ProductGridProps) {
         const createSocket = async () => {
 			socket = io("/", {
 				path:'/socket.io',
+				transports: ['polling', 'websocket'],
+  				autoConnect: true,
+  				reconnection: true,
 				auth: {
 					Authentication: await getAuthentication(),
 				},
