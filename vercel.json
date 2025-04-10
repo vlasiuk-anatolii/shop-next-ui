@@ -9,6 +9,10 @@
         "destination": "http://shop-backend-env.eba-kpsmmad2.eu-north-1.elasticbeanstalk.com/users/:path*"
       },
       {
+        "source": "/products",
+        "destination": "http://shop-backend-env.eba-kpsmmad2.eu-north-1.elasticbeanstalk.com/products"
+      },
+      {
         "source": "/products/:path*",
         "destination": "http://shop-backend-env.eba-kpsmmad2.eu-north-1.elasticbeanstalk.com/products/:path*"
       },
