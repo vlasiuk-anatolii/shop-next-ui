@@ -17,8 +17,8 @@
         "destination": "http://shop-backend-env.eba-kpsmmad2.eu-north-1.elasticbeanstalk.com/checkout/$1"
       },
       {
-        "source": "/socket.io/(.*)",
-        "destination": "http://shop-backend-env.eba-kpsmmad2.eu-north-1.elasticbeanstalk.com/socket.io/$1"
+        "source": "/socket.io/:path*",
+        "destination": "http://shop-backend-env.eba-kpsmmad2.eu-north-1.elasticbeanstalk.com/socket.io/:path*"
       }
     ],
     "headers": [
